@@ -334,7 +334,8 @@ Return
 
 Act1:
 GuiControl, Text, Status, %MSG1%
-RunWait, %ComSpec% /C Netsh WLAN add profile filename=%Dir1% user=all && Netsh WLAN connect name=%Name1%
+ProfileLocation=%A_ScriptDir%\%Dir1%
+RunWait, %ComSpec% /C Netsh WLAN add profile filename="%A_ScriptDir%\WiFi.xml" user=all && Netsh WLAN connect name=%Name1%
 GuiControl,, OverallProgress, +%Todo%
 Goto, Apply
 
@@ -392,18 +393,18 @@ if (Opt10=1) {
 	;Create Account
 	WinWaitActive, Internet Security
 		loop{
-		sleep 500
 			Text:="|<>*195$31.zU00Bs0006w0000S1xltjyvAarUNa3PkAnDhs6Ngqw3AqPTxaNxi"
 			if (ok:=FindText(394-150000, 321-150000, 394+150000, 321+150000, 0, 0, Text))
 			{
 			CoordMode, Mouse
 			X:=ok.1.x, Y:=ok.1.y, Comment:=ok.1.id
 			Click, %X%, %Y%
-			clipboard=%OrderNumber%%Email%
-			Send %clipboard%
+			Send %OrderNumber%%Email%
 			sleep 250
+			break
 			}
-				
+			}
+		loop{
 			Text:="|<>*197$56.z00000000wM0000000D200000003kbnlm8bbbwNBaWrPBXTw3MABqnMXk7nltJAqMw3A63RnBWD0nNcbQnMnk7nlsm7a7s"
 			if (ok:=FindText(407-150000, 363-150000, 407+150000, 363+150000, 0, 0, Text))
 			{
@@ -412,8 +413,10 @@ if (Opt10=1) {
 			Click, %X%, %Y%
 			Send %OrderNumber%
 			sleep 250
+			break
 			}
-					
+			}
+		loop{
 			Text:="|<>*196$40.zU00003604000AA0E000knnsjVv6NYavAjlWHP6Xn7tBAPz6M4QlcA9aFngnknlaDVs0008k00001X00000AA02"
 			if (ok:=FindText(399-150000, 404-150000, 399+150000, 404+150000, 0, 0, Text))
 			{
@@ -422,8 +425,10 @@ if (Opt10=1) {
 			Click, %X%, %Y%
 			Send %OrderNumber%
 			sleep 250
+			break
 			}
-					
+			}
+		loop{
 			Text:="|<>*171$37.D00020AM0030A1tlvna0lhanP0NaDNZUAzRgzk6MAqMAP6qvBXtVlwnY"
 			if (ok:=FindText(462-150000, 481-150000, 462+150000, 481+150000, 0, 0, Text))
 			{
@@ -433,7 +438,7 @@ if (Opt10=1) {
 			break
 			}
 			}
-			}
+			
 	;Skip
 	loop{
 		sleep 500
@@ -444,6 +449,7 @@ if (Opt10=1) {
 		X:=ok.1.x, Y:=ok.1.y, Comment:=ok.1.id
 		Click, %X%, %Y%
 		break
+		}
 		}
 		}
 	
@@ -497,6 +503,9 @@ IniRead, CurVer, config.ini, config, Version
 IniRead, UpdateURL, config.ini, config, UpdateURL
 
 UrlDownloadToFile, %LatestVersionURL%, %LatestVersionINI%
+if (ErrorLevel=1) {
+goto, vars	
+}
 IniRead, NextVer, %LatestVersionINI%, config, Version
 if (NextVer > CurVer) {
 	MsgBox, 4, Update?, A new version is available for download`, would you like to update?
