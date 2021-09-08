@@ -14,11 +14,14 @@ IniRead, UpdateURL, config.ini, config, UpdateURL
 
 FileDelete, %LatestVersionINI%
 if (NextVer > CurVer) {
+	URLFILE=%UpdateURL%%NextVer%/%File%
+	URLIMAGES=%UpdateURL%%NextVer%/%Images%
+	URLCONFIG=%UpdateURL%%NextVer%/%Config%
 	FileDelete, %File%
 	FileDelete, %Images%
-	UrlDownloadToFile, %UpdateURL%%NextVer%/%File%, %File%
-	UrlDownloadToFile, %UpdateURL%%NextVer%/%Images%, %Images%
-	UrlDownloadToFile, %UpdateURL%%NextVer%/%Config%, %Config%
+	UrlDownloadToFile, %URLFILE%, %File%
+	UrlDownloadToFile, %URLIMAGES%, %Images%
+	UrlDownloadToFile, %URLCONFIG%, %Config%
 	IniWrite, %NextVer%, config.ini, config, Version
 	Run, %ahk% %File%
 }

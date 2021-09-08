@@ -507,8 +507,9 @@ else {
 }
 IfMsgBox, Yes
 {
+	URLUPDATER=%UpdateURL%%NextVer%/%Updater%
 	FileDelete, %Updater%
-	UrlDownloadToFile, %UpdateURL%%NextVer%/%Updater%, %Updater%
+	UrlDownloadToFile, %URLUPDATER%, %Updater%
 	Run, %ahk% %Updater%
 	ExitApp
 }
