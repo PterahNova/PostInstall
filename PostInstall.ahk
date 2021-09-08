@@ -75,16 +75,16 @@ IniRead, MSG10, config.ini, config, Item-10-MSG
 IniRead, Email, config.ini, config, Email-Ending
 
 Defaults:
-Opt1=1
-Opt2=1
-Opt3=1
-Opt4=1
-Opt5=1
-Opt6=1
-Opt7=1
-Opt8=1
-Opt9=1
-Opt10=1
+IniRead, Opt1, config.ini, config, Opt1
+IniRead, Opt2, config.ini, config, Opt2
+IniRead, Opt3, config.ini, config, Opt3
+IniRead, Opt4, config.ini, config, Opt4
+IniRead, Opt5, config.ini, config, Opt5
+IniRead, Opt6, config.ini, config, Opt6
+IniRead, Opt7, config.ini, config, Opt7
+IniRead, Opt8, config.ini, config, Opt8
+IniRead, Opt9, config.ini, config, Opt9
+IniRead, Opt10, config.ini, config, Opt10
 
 ;GUI
 Gui, -Caption
@@ -98,51 +98,51 @@ Gui, Add, Picture, x289 y14 w14 h-1 gMinimize, %Minimize%
 Gui, Add, Picture, x332 y14 w14 h-1 gGuiClose, %Close%
 
 Gui, Add, Text, x12 y52 w300 h30 +BackgroundTrans, %Menu1%
-Gui, Add, Picture, x290 y52 w-1 h30 vOn2 gsub2 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y52 w-1 h30 vOff2 gsub2 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y52 w-1 h30 vOn1 gsub1 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y52 w-1 h30 vOff1 gsub1 +BackgroundTrans hidden,%Off%
 
 Gui, Add, Text, x12 y99 w300 h30 +BackgroundTrans, %Menu2%
-Gui, Add, Picture, x290 y99 w-1 h30 vOn3 gsub3 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y99 w-1 h30 vOff3 gsub3 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y99 w-1 h30 vOn2 gsub2 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y99 w-1 h30 vOff2 gsub2 +BackgroundTrans hidden,%Off%
 
 
 Gui, Add, Text, x12 y146 w300 h30 +BackgroundTrans, %Menu3%
-Gui, Add, Picture, x290 y146 w-1 h30 vOn4 gsub4 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y146 w-1 h30 vOff4 gsub4 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y146 w-1 h30 vOn3 gsub3 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y146 w-1 h30 vOff3 gsub3 +BackgroundTrans hidden,%Off%
 
 
 Gui, Add, Text, x12 y193 w300 h30 +BackgroundTrans, %Menu4%
-Gui, Add, Picture, x290 y193 w-1 h30 vOn5 gsub5 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y193 w-1 h30 vOff5 gsub5 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y193 w-1 h30 vOn4 gsub4 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y193 w-1 h30 vOff4 gsub4 +BackgroundTrans hidden,%Off%
 
 
 Gui, Add, Text, x12 y240 w300 h30 +BackgroundTrans, %Menu5%
-Gui, Add, Picture, x290 y240 w-1 h30 vOn6 gsub6 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y240 w-1 h30 vOff6 gsub6 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y240 w-1 h30 vOn5 gsub5 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y240 w-1 h30 vOff5 gsub5 +BackgroundTrans hidden,%Off%
 
 
 Gui, Add, Text, x12 y287 w300 h30 +BackgroundTrans, %Menu6%
-Gui, Add, Picture, x290 y287 w-1 h30 vOn7 gsub7 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y287 w-1 h30 vOff7 gsub7 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y287 w-1 h30 vOn6 gsub6 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y287 w-1 h30 vOff6 gsub6 +BackgroundTrans hidden,%Off%
 
 
 Gui, Add, Text, x12 y334 w300 h30 +BackgroundTrans, %Menu7%
-Gui, Add, Picture, x290 y334 w-1 h30 vOn8 gsub8 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y334 w-1 h30 vOff8 gsub8 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y334 w-1 h30 vOn7 gsub7 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y334 w-1 h30 vOff7 gsub7 +BackgroundTrans hidden,%Off%
 
 
-Gui, Add, Text, x12 y381 w300 h30 +BackgroundTrans, %Menu8%
-Gui, Add, Picture, x290 y381 w-1 h30 vOn10 gsub10 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y381 w-1 h30 vOff10 gsub10 +BackgroundTrans hidden,%Off%
+Gui, Add, Text, x12 y428 w300 h30 +BackgroundTrans, %Menu8%
+Gui, Add, Picture, x290 y428 w-1 h30 vOn8 gsub8 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y428 w-1 h30 vOff8 gsub8 +BackgroundTrans hidden,%Off%
 
 
-Gui, Add, Text, x12 y428 w300 h30 +BackgroundTrans, %Menu9%
-Gui, Add, Picture, x290 y428 w-1 h30 vOn9 gsub9 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y428 w-1 h30 vOff9 gsub9 +BackgroundTrans hidden,%Off%
+Gui, Add, Text, x12 y381 w300 h30 +BackgroundTrans, %Menu9%
+Gui, Add, Picture, x290 y381 w-1 h30 vOn9 gsub9 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y381 w-1 h30 vOff9 gsub9 +BackgroundTrans hidden,%Off%
 
 Gui, Add, Text, x12 y475 w300 h30 +BackgroundTrans, %Menu10%
-Gui, Add, Picture, x290 y475 w-1 h30 vOn1 gsub1 +BackgroundTrans,%On%
-Gui, Add, Picture, x290 y475 w-1 h30 vOff1 gsub1 +BackgroundTrans hidden,%Off%
+Gui, Add, Picture, x290 y475 w-1 h30 vOn10 gsub10 +BackgroundTrans,%On%
+Gui, Add, Picture, x290 y475 w-1 h30 vOff10 gsub10 +BackgroundTrans hidden,%Off%
 
 Gui, Font, Impact s17 cA3A6AB
 
@@ -452,7 +452,6 @@ Goto, Apply
 Act9:
 GuiControl, Text, Status, %MSG9%
 run, %Dir9% %Args9%
-WinWaitActive, uBlock Origin - Chrome Web Store - Google Chrome
 loop{
 	Text:="|<>*190$44.DzzzzzznzzzzzzwzzzzzzzDkw233kHta0UaMUztD8nmQDUHmQ0U3tYwbDtwyNU9s60DUQ2T3kTzzwzzzzzzUTzzzzzwDzzzs"
 	if (ok:=FindText(1019-150000, 936-150000, 1019+150000, 936+150000, 0, 0, Text))

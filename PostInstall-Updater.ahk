@@ -18,6 +18,7 @@ if (NextVer > CurVer) {
 	FileDelete, %Images%
 	UrlDownloadToFile, %UpdateURL%%NextVer%/%File%, %File%
 	UrlDownloadToFile, %UpdateURL%%NextVer%/%Images%, %Images%
+	UrlDownloadToFile, %UpdateURL%%NextVer%/%Config%, %Config%
 	IniWrite, %NextVer%, config.ini, config, Version
 	Run, %ahk% %File%
 }
