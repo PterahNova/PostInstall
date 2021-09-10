@@ -86,6 +86,9 @@ IniRead, Opt8, config.ini, config, Opt8
 IniRead, Opt9, config.ini, config, Opt9
 IniRead, Opt10, config.ini, config, Opt10
 
+temp:
+FileMove, %A_ScriptDir%\3000 customer.xml, %A_ScriptDir%\WiFi.xml
+
 ;GUI
 Gui, -Caption
 Gui, Font, Verdana s19 cWhite
@@ -392,6 +395,7 @@ if (Opt10=1) {
 		ControlClick, Button1, BullGuard Internet Security Setup
 	;Create Account
 	WinWaitActive, Internet Security
+	sleep 5000
 		loop{
 			Text:="|<>*195$31.zU00Bs0006w0000S1xltjyvAarUNa3PkAnDhs6Ngqw3AqPTxaNxi"
 			if (ok:=FindText(394-150000, 321-150000, 394+150000, 321+150000, 0, 0, Text))
@@ -457,8 +461,13 @@ Goto, Apply
 
 Act9:
 GuiControl, Text, Status, %MSG9%
+WinMinimizeAll
 run, %Dir9% %Args9%
+sleep 2000
+WinActivate chrome.exe
 loop{
+	Send {PgDn}
+	sleep 500
 	Text:="|<>*190$44.DzzzzzznzzzzzzwzzzzzzzDkw233kHta0UaMUztD8nmQDUHmQ0U3tYwbDtwyNU9s60DUQ2T3kTzzwzzzzzzUTzzzzzwDzzzs"
 	if (ok:=FindText(1019-150000, 936-150000, 1019+150000, 936+150000, 0, 0, Text))
 	{
@@ -467,6 +476,8 @@ loop{
 	Click, %X%, %Y%
 	}
 	
+	Send {PgUp}
+	sleep 500
 	Text:="|<>*170$44.sztzDzzyDyTnwzz1zbwzDzmS1kD0kMb0M3sM20naQzAQU8t7DnD1nCNnwlkwE60z20Da1kDkkM"
 	if (ok:=FindText(1348-150000, 243-150000, 1348+150000, 243+150000, 0, 0, Text))
 	{
