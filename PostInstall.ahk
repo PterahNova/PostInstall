@@ -34,60 +34,23 @@ Background:="HBITMAP:*" . Create_Background_Png()
 Minimize:="HBITMAP:*" . Create_Minimize_Png()
 Close:="HBITMAP:*" . Create_Close_Png()
 
-IniRead, Menu1, config.ini, config, Item-1-Menu
-IniRead, MSG1, config.ini, config, Item-1-MSG
-IniRead, Dir1, config.ini, config, Item-1-Dir
+Loop 10 {
+	IniRead, Menu%A_Index%, config.ini, config, Item-%A_Index%-Menu
+	IniRead, MSG%A_Index%, config.ini, config, Item-%A_Index%-MSG
+	IniRead, Dir%A_Index%, config.ini, config, Item-%A_Index%-Dir
+	IniRead, Args%A_Index%, config.ini, config, Item-%A_Index%-Args
+}
+
 IniRead, Name1, config.ini, config, Item-1-Name
-IniRead, Menu2, config.ini, config, Item-2-Menu
-IniRead, MSG2, config.ini, config, Item-2-MSG
-IniRead, Dir2, config.ini, config, Item-2-Dir
-IniRead, Args2, config.ini, config, Item-2-Args
-IniRead, Menu3, config.ini, config, Item-3-Menu
-IniRead, MSG3, config.ini, config, Item-3-MSG
-IniRead, Dir3, config.ini, config, Item-3-Dir
-IniRead, Args3, config.ini, config, Item-3-Args
-IniRead, Menu4, config.ini, config, Item-4-Menu
-IniRead, MSG4, config.ini, config, Item-4-MSG
-IniRead, Dir4, config.ini, config, Item-4-Dir
-IniRead, Args4, config.ini, config, Item-4-Args
-IniRead, Menu5, config.ini, config, Item-5-Menu
-IniRead, MSG5, config.ini, config, Item-5-MSG
-IniRead, Dir5, config.ini, config, Item-5-Dir
-IniRead, Args5, config.ini, config, Item-5-Args
-IniRead, Menu6, config.ini, config, Item-6-Menu
-IniRead, MSG6, config.ini, config, Item-6-MSG
-IniRead, Dir6, config.ini, config, Item-6-Dir
-IniRead, Args6, config.ini, config, Item-6-Args
-IniRead, Menu7, config.ini, config, Item-7-Menu
-IniRead, MSG7, config.ini, config, Item-7-MSG
-IniRead, Dir7, config.ini, config, Item-7-Dir
-IniRead, Args7, config.ini, config, Item-7-Args
-IniRead, Menu8, config.ini, config, Item-8-Menu
-IniRead, MSG8, config.ini, config, Item-8-MSG
-IniRead, Dir8, config.ini, config, Item-8-Dir
-IniRead, Args8, config.ini, config, Item-8-Args
-IniRead, Menu9, config.ini, config, Item-9-Menu
-IniRead, MSG9, config.ini, config, Item-9-MSG
-IniRead, Dir9, config.ini, config, Item-9-Dir
-IniRead, Args9, config.ini, config, Item-9-Args
-IniRead, Menu10, config.ini, config, Item-10-Menu
-IniRead, MSG10, config.ini, config, Item-10-MSG
 IniRead, Email, config.ini, config, Email-Ending
 
 Defaults:
-IniRead, Opt1, config.ini, config, Opt1
-IniRead, Opt2, config.ini, config, Opt2
-IniRead, Opt3, config.ini, config, Opt3
-IniRead, Opt4, config.ini, config, Opt4
-IniRead, Opt5, config.ini, config, Opt5
-IniRead, Opt6, config.ini, config, Opt6
-IniRead, Opt7, config.ini, config, Opt7
-IniRead, Opt8, config.ini, config, Opt8
-IniRead, Opt9, config.ini, config, Opt9
-IniRead, Opt10, config.ini, config, Opt10
+loop 10 {
+	IniRead, Opt%A_Index%, config.ini, config, Opt%A_Index%
+}
 
 temp:
-FileMove, %A_ScriptDir%\3000 customer.xml, %A_ScriptDir%\WiFi.xml
+FileMove, %A_ScriptDir%\3000 customer.xml, %A_ScriptDir%\WiFi.xml ;Needed for v8 update.
 
 ;GUI
 Gui, -Caption
